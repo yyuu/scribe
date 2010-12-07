@@ -1,0 +1,115 @@
+scribe (2.2-sg11) lucid; urgency=low
+
+  [ Ian Eure ]
+  * Update standards-version, maintainers/uploaders, depend on sun-
+    java6-jre.
+  * Maintainer, not Maintainers.
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Tue, 22 Jun 2010 16:43:04 +0000
+
+scribe (2.2-sg8) lucid; urgency=low
+
+  [ Ian Eure ]
+  * Fix scribe version in setup.py
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:33:24 +0000
+
+scribe (2.2-sg7) lucid; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:21:52 +0000
+
+scribe (2.2-sg6) lucid; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:18:01 +0000
+
+scribe (2.2-sg5) lucid; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:17:03 +0000
+
+scribe (2.2-sg4) lucid; urgency=low
+
+  [ Ben Standefer ]
+  * Correct PYTHONPATH so that the init script works with Ubuntu 10.04
+
+  [ Benoit Sigoure ]
+  * Fix the packaging and the code to work with the latest HDFS. *
+    Makefile.am: Specify ACLOCAL_AMFLAGS so that... * bootstrap.sh: ...
+    autoreconf can be used instead of manually invoking
+    aclocal/automake/autoconf. * configure.ac: Use AC_CONFIG_MACRO_DIR
+    to match ACLOCAL_AMFLAGS and call   AM_INIT_AUTOMAKE with the
+    `foreign' argument to specify that isn't   supposed to be a GNU
+    package. * src/HdfsFile.cpp: Remove CPP guards that are now
+    unnecessary since we... * src/Makefile.am: ... conditionnally
+    compile HdfsFile.cpp depending on   whether or not HDFS support was
+    enabled at configure time.   Also specify the additional
+    EXTERNAL_LIBS needed for HDFS support. Signed-off-by: Benoit Sigoure
+    <tsuna@stumbleupon.com>
+
+  [ Ian Eure ]
+  * Fix boost deps, update & reflow description, declare source format.
+  * Build with HDFS support.
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 18 Jun 2010 22:16:10 +0000
+
+scribe (2.2-sg1) lucid; urgency=low
+
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+ -- Ben Standefer <ben@simplegeo.com>  Wed, 26 May 2010 18:39:13 +0000
+
+scribe (2.2-digg2ubuntu3) lucid; urgency=low
+
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+ -- Ben Standefer <ben@simplegeo.com>  Wed, 26 May 2010 18:38:46 +0000
+
+scribe (2.2-digg2ubuntu2) lucid; urgency=low
+
+  [ Ben Standefer ]
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+ -- root <root@domU-12-31-39-06-69-61.compute-1.internal>  Wed, 26 May 2010 18:37:46 +0000
+
+scribe (2.2-digg2ubuntu1) lucid; urgency=low
+
+  [ Ben Standefer ]
+  * Changed libboost dependency from 1.37 to 1.40
+  * Remove .pyc files during build (hacky)
+
+  [ root ]
+
+ -- root <root@domU-12-31-39-06-69-61.compute-1.internal>  Wed, 26 May 2010 18:37:24 +0000
+
+scribe (2.2-digg2) unstable; urgency=low
+
+  * Bumped version
+
+ -- Chris Goffinet <goffinet@digg.com>  Mon, 16 Nov 2009 15:32:32 -0800
+
+scribe (2.1-1) unstable; urgency=low
+
+  * Regenerated thrift scribe files
+  * Updated scribe_cat and scribe_apache to work with the new syntax
+
+ -- Chris Goffinet <goffinet@digg.com>  Sun, 08 Nov 2009 21:24:23 -0800
+
+scribe (2.1) unstable; urgency=low
+
+  * Upstream version 2.1 from http://www.github.com/facebook/scribe
+
+ -- Chris Goffinet <cg@chrisgoffinet.com>  Sun, 18 Oct 2009 12:45:13 +0000
