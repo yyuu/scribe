@@ -27,7 +27,8 @@ else
 	CFLAGS += -O2
 endif
 
-config.status:
+configure: configure-stamp
+configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
 	$(CURDIR)/bootstrap.sh
@@ -39,9 +40,11 @@ config.status:
 		--with-hadooppath=/usr/lib/hadoop \
 		CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" CXXFLAGS="$(CFLAGS)"
 
+	touch configure-stamp
+
 build: build-stamp
 
-build-stamp:  config.status
+build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
@@ -53,7 +56,7 @@ build-stamp:  config.status
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp
+	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
 	dh_clean
