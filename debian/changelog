@@ -1,3 +1,20 @@
+scribe (2.2-sg11.2) lucid; urgency=low
+
+  * Non-maintainer upload.
+  * Added boost 1.40 to dependencies.
+  * Specify CFLAGS and CXXFLAGS on building to make Java headers available.
+  * Set LD_LIBRARY_PATH for scribed (to find libjvm.so which is a part of sun-java6-bin)
+  * Removed a sample script of examples/scribe_apache from installation. It seems missing.
+
+ -- Yamashita Yuu <yamashita@geishatokyo.com>  Sun, 28 Nov 2010 17:52:31 +0900
+
+scribe (2.2-sg11.1) lucid; urgency=low
+
+  * Imported Debian package meta files from SimpleGeo.
+    https://github.com/simplegeo/scribe
+
+ -- Yamashita Yuu <yamashita@geishatokyo.com>  Sun, 28 Nov 2010 17:52:31 +0900
+
 scribe (2.2-sg11) lucid; urgency=low
 
   [ Ian Eure ]

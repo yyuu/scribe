@@ -1,14 +1,21 @@
 #! /bin/sh
 #
-# skeleton	example file to build /etc/init.d/ scripts.
-#		This file should be used to construct scripts for /etc/init.d.
+# /etc/init.d/scribe -- startup script for the scribe
 #
-#		Written by Miquel van Smoorenburg <miquels@cistron.nl>.
-#		Modified for Debian 
-#		by Ian Murdock <imurdock@gnu.ai.mit.edu>.
+# Written by Ben Standefer <ben@simplegeo.com>
+# Modified by Yamashita, Yuu <yamashita@geishatokyo.com>
 #
-# Version:	@(#)skeleton  1.9  26-Feb-2001  miquels@cistron.nl
-#
+### BEGIN INIT INFO
+# Provides:          scribe
+# Required-Start:    $local_fs $remote_fs $network
+# Required-Stop:     $local_fs $remote_fs $network
+# Should-Start:      $named
+# Should-Stop:       $named
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start scribe.
+# Description:       Start scribe.
+### END INIT INFO
 
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.6/site-packages
 
@@ -18,6 +25,10 @@ NAME=scribe
 DESC=scribe
 DAEMON_OPTS="-c /etc/scribe/scribe.conf"
 SCRIBE_CTRL=/usr/bin/scribe_ctrl
+JAVA_HOME=/usr/lib/jvm/java-6-sun
+ARCH=`uname -m | sed -e 's/^x86_64$/amd64/'`
+LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib:$JAVA_HOME/jre/lib/$ARCH/server
+export JAVA_HOME LD_LIBRARY_PATH
 
 test -x $DAEMON || exit 0
 

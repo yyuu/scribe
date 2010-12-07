@@ -31,10 +31,13 @@ config.status:
 	dh_testdir
 	# Add here commands to configure the package.
 	$(CURDIR)/bootstrap.sh
-	$(CURDIR)/configure --prefix=/usr --with-thriftpath=/usr \
-                        --with-fb303path=/usr \
-                        --enable-hdfs --with-hadooppath=/usr/lib \
-    CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" CXXFLAGS="$(CFLAGS)"
+	$(CURDIR)/configure \
+		--prefix=/usr \
+		--with-thriftpath=/usr \
+		--with-fb303path=/usr \
+		--enable-hdfs \
+		--with-hadooppath=/usr/lib/hadoop \
+		CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" CXXFLAGS="$(CFLAGS)"
 
 build: build-stamp
 
@@ -42,7 +45,7 @@ build-stamp:  config.status
 	dh_testdir
 
 	# Add here commands to compile the package.
-	$(MAKE)
+	$(MAKE) CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" CXXFLAGS="$(CFLAGS)"
 	#docbook-to-man debian/scribe.sgml > scribe.1
 
 	touch $@
@@ -64,7 +67,7 @@ install: build
 	# Add here commands to install the package into debian/scribe.
 	$(MAKE) DESTDIR=$(CURDIR)/debian/scribe install
 	cp $(CURDIR)/examples/scribe_cat $(CURDIR)/debian/scribe/usr/bin
-	cp $(CURDIR)/examples/scribe_apache $(CURDIR)/debian/scribe/usr/bin
+#	cp $(CURDIR)/examples/scribe_apache $(CURDIR)/debian/scribe/usr/bin
 	cp $(CURDIR)/examples/scribe_ctrl $(CURDIR)/debian/scribe/usr/bin
 	mkdir -p $(CURDIR)/debian/scribe/etc/scribe
 	cp $(CURDIR)/debian/scribe.conf $(CURDIR)/debian/scribe/etc/scribe/scribe.conf
