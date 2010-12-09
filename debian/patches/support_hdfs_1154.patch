@@ -1,0 +1,24 @@
+Index: scribe/src/HdfsFile.cpp
+===================================================================
+--- scribe.orig/src/HdfsFile.cpp	2010-12-09 21:07:45.000000000 +0900
++++ scribe/src/HdfsFile.cpp	2010-12-09 21:08:49.000000000 +0900
+@@ -156,7 +156,9 @@
+   }
+ 
+   int value = hdfsExists(fileSys, path.c_str());
+-  if (value == 0) {
++  if (value == -1) {
++    return;
++  } else {
+     int numEntries = 0;
+     hdfsFileInfo* pHdfsFileInfo = 0;
+     pHdfsFileInfo = hdfsListDirectory(fileSys, path.c_str(), &numEntries);
+@@ -173,8 +175,6 @@
+     } else {
+       throw std::runtime_error("hdfsListDirectory call failed");
+     }
+-  } else if (value == -1) {
+-    throw std::runtime_error("hdfsExists call failed");
+   }
+ }
+ 

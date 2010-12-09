@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -x "/etc/init.d/scribe" ]; then
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d scribe stop
+	else
+		/etc/init.d/scribe stop
+	fi
+fi
+
+exit 0

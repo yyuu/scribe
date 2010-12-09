@@ -1,3 +1,13 @@
+scribe (2.2-sg11.3) lucid; urgency=low
+
+  * Non-maintainer upload.
+  * Applied patch from Travis Crawford to prevent "hdfsExists call failed" 
+    http://groups.google.com/group/scribe-server/msg/7319da4d57cf6f0c
+  * Added prerm/postrm scripts to prevent errors on the package deletion
+    when service is not running.
+
+ -- Yamashita Yuu <yamashita@geishatokyo.com>  Thu, 09 Dec 2010 21:19:41 +0900
+
 scribe (2.2-sg11.2) lucid; urgency=low
 
   * Non-maintainer upload.
