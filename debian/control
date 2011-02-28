@@ -8,7 +8,7 @@ Standards-Version: 3.8.4
 
 Package: scribe
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libthrift0, python-thrift, python, thrift-fb303, sun-java6-jre, sed
+Depends: ${shlibs:Depends}, ${misc:Depends}, libthrift0, python-thrift, python, thrift-fb303, sun-java6-jre, sed (>= 4.1.5)
 Description: Facebook's distributed, streaming log server
  Scribe is a server for aggregating log data streamed in real time
  from a large number of servers. It is designed to be scalable,

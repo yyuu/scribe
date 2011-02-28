@@ -54,7 +54,7 @@ case "$1" in
 	echo "Reloading $DESC configuration files."
 	$SCRIBE_CTRL reload
   	;;
-  restart)
+  restart|force-reload)
     echo -n "Restarting $DESC: "
 	$SCRIBE_CTRL stop
 	sleep 1

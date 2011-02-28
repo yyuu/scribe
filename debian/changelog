@@ -1,3 +1,13 @@
+scribe (2.2-sg11.5) lucid; urgency=low
+
+  * Non-maintainer upload.
+  * Modified package metafiles to suppress lintian warnings.
+  * specified version of essential package
+  * added force-reload option to init script
+
+
+ -- Yamashita Yuu <yamashita@geishatokyo.com>  Mon, 28 Feb 2011 14:00:40 +0900
+
 scribe (2.2-sg11.4) lucid; urgency=low
 
   * Non-maintainer upload.
